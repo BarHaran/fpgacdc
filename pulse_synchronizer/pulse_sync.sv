@@ -42,7 +42,7 @@ dual_ff_sync #(.DATA_WIDTH(1)) dual_ff_sync_inst (
 	.out_data(sync_out)
 );
 
-always_ff @(posedge in_clk or negedge rst_n) begin : proc_out_last_ff
+always_ff @(posedge out_clk or negedge rst_n) begin : proc_out_last_ff
 	if(~rst_n) begin
 		out_last_ff <= 1'b0;
 	end else begin
